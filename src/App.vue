@@ -60,17 +60,31 @@
         </v-img>
       </template>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Tablero</v-app-bar-title>
+      <v-app-bar-title>Nutrition</v-app-bar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
+        
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
+      <v-btn
+          @click="clear"
+      >
+      <v-icon left>
+          mdi-send
+      </v-icon>
+          Iniciar sesión
+      </v-btn>
+
+      <template v-slot:extension>
+        <v-tabs align-with-title>
+          <v-tab>Planes</v-tab>
+          <v-tab>Productos</v-tab>
+          <v-tab>Precios</v-tab>
+        </v-tabs>
+      </template>      
     </v-app-bar>
 
     <v-main>
@@ -85,6 +99,7 @@
       drawer: null,
       items: [
           { title: 'Home', icon: 'mdi-home-outline', to:'/' },
+          { title: 'Landingpage', icon: 'mdi-calendar-arrow-right', to:'landingpage' },
           { title: 'Agenda', icon: 'mdi-calendar-arrow-right', to:'/agenda' },
           { title: 'Pacientes', icon: 'mdi-account-group',to:'/pacientes' },
           { title: 'Mensajes', icon: 'mdi-forum',to:'/mensajes' },
