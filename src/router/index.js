@@ -10,27 +10,10 @@ const routes = [
     name: "Home",
     component: Home,
   },
+
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
-  },
-  {
-    path: "/form",
-    name: "Form",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Form.vue"),
-  },
-  {
-    path: "/pacientes",
-    name: "Pacientes",
+    path: "/patients",
+    name: "patients",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -38,8 +21,8 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Pacientes.vue"),
   },
   {
-    path: "/agenda",
-    name: "Agenda",
+    path: "/schedule",
+    name: "schedule",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -47,8 +30,8 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Agenda.vue"),
   },
   {
-    path: "/tareas",
-    name: "Tareas",
+    path: "/taks",
+    name: "Taks",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -56,8 +39,8 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Tareas.vue"),
   },
   {
-    path: "/mensajes",
-    name: "Mensajes",
+    path: "/messaging",
+    name: "messaging",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

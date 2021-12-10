@@ -52,7 +52,7 @@
         </v-img>
       </template>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Onetree</v-app-bar-title>
+      <v-app-bar-title>OnetreeCodingExercise</v-app-bar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
@@ -66,9 +66,9 @@
 
       <template v-slot:extension>
         <v-tabs align-with-title>
-          <v-tab>Planes</v-tab>
-          <v-tab>Productos</v-tab>
-          <v-tab>Precios</v-tab>
+          <v-tab>Plans</v-tab>
+          <v-tab>Products</v-tab>
+          <v-tab>Prices</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -119,21 +119,15 @@ export default {
     ],
     items: [
       { title: "Home", icon: "mdi-home-outline", to: "/" },
-      {
-        title: "Landingpage",
-        icon: "mdi-calendar-arrow-right",
-        to: "landingpage",
-      },
-      { title: "Agenda", icon: "mdi-calendar-arrow-right", to: "/agenda" },
-      { title: "Pacientes", icon: "mdi-account-group", to: "/pacientes" },
-      { title: "Mensajes", icon: "mdi-forum", to: "/mensajes" },
-      { title: "Acompañamiento", icon: "mdi-hand-heart" },
-      { title: "Alimentos", icon: "mdi-food-fork-drink" },
-      { title: "Tareas", icon: "mdi-book-check", to: "/tareas" },
-      { title: "Registrar cliente", icon: "mdi-account-plus", to: "/form" },
-      { title: "Login", icon: "mdi-account-plus", to: "/login" },
       { title: "Register", icon: "mdi-account-plus", to: "/register" },
+      { title: "Login", icon: "mdi-login", to: "/login" },
       { title: "Dashboard", icon: "mdi-account-plus", to: "/dashboard" },
+      { title: "Schedule", icon: "mdi-calendar-arrow-right", to: "/schedule" },
+      { title: "Patients", icon: "mdi-account-group", to: "/patients" },
+      { title: "Taks", icon: "mdi-book-check", to: "/taks" },
+      { title: "Messaging", icon: "mdi-forum", to: "/messaging" },
+      { title: "Caregiver", icon: "mdi-hand-heart" },
+      { title: "Foods", icon: "mdi-food-fork-drink" },
     ],
   }),
 };
