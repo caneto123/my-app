@@ -1,62 +1,73 @@
 <template>
-  <div class="text-center">
-    <v-form @submit.prevent="register">
-      <h2>Register</h2>
+  <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="register">
+    <v-text-field
+    class="mx-6"
+      v-model="name"
+      :counter="10"
+      :rules="nameRules"
+      label="Name"
+      required
+    ></v-text-field>
+        <v-text-field
+        class="mx-6"
+      v-model="lastname"
+      :counter="10"
+      :rules="nameRules"
+      label="Lastname"
+      required
+    ></v-text-field>
 
-      <v-card class="d-flex justify-center mb-6" flat>
-        <input
-          class="mx-2 form-control col-md-2"
-          type="email"
-          placeholder="Email address..."
-          v-model="email"
-        />
-        <input
-          class="mx-2 form-control col-md-2"
-          type="password"
-          placeholder="Password..."
-          v-model="password"
-        />
-        <input
-          class="mx-2 form-control col-md-2"
-          type="name"
-          placeholder="Name..."
-          v-model="name"
-        />
-        <input
-          class="form-control"
-          type="LastName"
-          placeholder="Last name..."
-          v-model="LastName"
-        />
-        <v-select
-          class="mx-2 form-control"
-          :items="items"
-          dense
-          outlined
-        ></v-select>
-        <v-checkbox
-          v-model="terms"
-          :rules="[(v) => !!v || 'You must agree to continue!']"
-          label="Accept terms and conditions"
-          required
-        >
-        </v-checkbox>
-      </v-card>
-      <div id="example-2" class="my-5">
-        <v-btn
-          v-on:click="greet"
-          class="btnOne"
-          elevation="2"
-          color="#ea9f77"
-          type="submit"
-        >
-          <v-icon left color="white"> mdi-login </v-icon>
-          <span class="white--text">Register</span>
-        </v-btn>
-      </div>
-      <p>Have an account? <router-link to="/login">Login here</router-link></p>
-    </v-form>
-  </div>
+    <v-text-field
+    class="mx-6"
+      v-model="email"
+      :rules="emailRules"
+      label="E-mail"
+      type="email"
+      required
+    ></v-text-field>
+
+    <v-text-field
+    class="mx-6"
+      v-model="password"
+      :counter="10"
+      :rules="nameRules"
+      label="Password"
+      type="password"
+      required
+    ></v-text-field>
+
+    <v-select
+    class="mx-6"
+      v-model="select"
+      :items="items"
+      :rules="[(v) => !!v || 'Item is required']"
+      label="Item"
+      required
+    ></v-select>
+
+    <v-checkbox
+    class="mx-6"
+      v-model="checkbox"
+      :rules="[(v) => !!v || 'You must agree to continue!']"
+      label="Do you agree?"
+      required
+    ></v-checkbox>
+    <div class="my-5 mx-6">
+      <v-btn class="btnOne" elevation="2" color="#ea9f77" type="submit">
+        <v-icon left color="white"> mdi-login </v-icon>
+        <span class="white--text">Resgister</span>
+      </v-btn>
+    </div>
+    <p class="mx-6">Have an account? <router-link to="/login">Login here</router-link></p>
+
+    <!-- <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
+      Validate
+    </v-btn>
+
+    <v-btn color="error" class="mr-4" @click="reset"> Reset Form </v-btn>
+
+    <v-btn color="warning" @click="resetValidation"> Reset Validation </v-btn> -->
+  </v-form>
 </template>
 
 <script>
@@ -93,5 +104,9 @@ export default {
 .textPrincipal {
   text-align: center;
   color: #676a6c;
+}
+
+.test1 {
+  outline: red solid;
 }
 </style>
